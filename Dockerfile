@@ -1,11 +1,14 @@
 FROM kalilinux/kali-rolling
 
 WORKDIR /workspace
+
 COPY wordlist.zip /usr/share/wordlist.zip
+
 RUN apt update
-RUN apt install -y zip git curl zsh python3.10 emacs openvpn
+RUN apt install -y zip git curl zsh python3.10 nano openvpn
+RUN apt install -y ftp telnet netcat-traditional 
 RUN apt install -y apache2 nmap sqlitebrowser gobuster
-RUN apt install -y hashcat john medusa
+RUN apt install -y hashcat john medusa exploitdb metasploit-framework
 
 RUN rm -rf /usr/share/wordlists
 RUN unzip /usr/share/wordlist.zip -d /usr/share/
