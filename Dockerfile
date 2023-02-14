@@ -2,7 +2,7 @@ FROM kalilinux/kali-rolling
 
 WORKDIR /workspace
 
-COPY wordlist.zip /usr/share/wordlist.zip
+COPY dependencies/wordlist.zip /usr/share/wordlist.zip
 
 RUN apt update
 RUN apt install -y zip git curl zsh python3.10 nano openvpn
